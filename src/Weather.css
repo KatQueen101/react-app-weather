@@ -1,6 +1,9 @@
 .Weather {
   font-family: Arial, Helvetica, sans-serif;
   border: 1px solid #dadde1;
+  padding: 16px;
+  margin: 30px;
+  border-radius: 4px;
   color: rgb(135, 135, 135);
 }
 
