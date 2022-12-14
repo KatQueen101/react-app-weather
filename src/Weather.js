@@ -8,6 +8,7 @@ export default function Weather() {
   function handleResponse(response) {
     console.log(response.data);
     setTemperature(response.data.main.temp);
+    setReady(true);
   }
 
   if (ready) {
