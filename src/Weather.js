@@ -9,7 +9,10 @@ export default function Weather() {
     console.log(response.data);
     setWeatherData({
       temperature: response.data.main.temp,
-      wind: 12,
+      humidity: response.data.main.humidity,
+      description: response.data.weather[0].description,
+      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
+      wind: response.data.wind.speed,
       city: response.data.name,
     });
 
@@ -47,8 +50,8 @@ export default function Weather() {
           <div className="col-6">
             <div className="clearfix">
               <img
-                src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-                alt="Clear"
+                src={weatherData.iconUrl}
+                alt={weatherData.description}
                 className="float-left"
               />
               <div className="float-left">
@@ -61,8 +64,7 @@ export default function Weather() {
           </div>
           <div className="col-6">
             <ul>
-              <li>Precipitation: 1%</li>
-              <li>Humidity: 40%</li>
+              <li>Humidity: {weatherData.humidity}%</li>
               <li>Wind: {weatherData.wind} mph</li>
             </ul>
           </div>
